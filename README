@@ -1,0 +1,19 @@
+This is my first plugin, so I expect there to be some mistakes. 
+Comments or suggestions are welcome.
+---------------------------------------------------------------------------
+Setup:
+-Required
+--jQuery 1.4.4+
+--jCarousel 0.2.8
+
+Copy graph.css and jcarousel_skin.css into your css directory. (Adjust image paths as needed)
+Copy /graph, /jcarousel, and /metrics into your images directory
+
+On the page you wish to use the animated graph on, create an empty div and point the plugin at it.
+$('benchmark').graph()
+
+Pass objects in just like anyother jQuery plugin.
+  $('benchmark').graph({
+    jsonScript: "/controls/benchmark.php", 
+    ajaxData: {key1: 'value1', key2: 'value2'} 
+  });
