@@ -18,7 +18,7 @@ p, h3 {
 }
 
 #wrapper {
-	background: url(../images/danbo.jpg) no-repeat fixed left top #000000;
+	background: #000000;
 	margin: 0 auto;
 	padding: 20px 0;
 	width: 900px;
