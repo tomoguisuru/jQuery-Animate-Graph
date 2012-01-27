@@ -1,0 +1,49 @@
+html {
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	background: #000000;
+	padding:0;
+	margin:0;
+	color: #333333;
+    font-family: Arial,Helvetica,Verdana,Sans-Serif;
+	font-size: 9pt;
+}
+
+p, h3 {
+	padding: 0;
+	margin: 0;
+}
+
+#wrapper {
+	background: url(../images/danbo.jpg) no-repeat fixed left top #000000;
+	margin: 0 auto;
+	padding: 20px 0;
+	width: 900px;
+}
+
+.widget {
+	background: #DFDFDF;
+	background: rgba(233, 233, 233, 0.75);
+	
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	margin: 5px 5px 20px;
+	padding: 10px;
+}
+	.widget > h2 {
+		background-color: #454545;
+		-moz-border-radius: 5px 5px 5px 5px;
+		-webkit-border-radius: 5px 5px 5px 5px;
+		border-radius: 5px 5px 5px 5px;
+		-moz-box-shadow: 3px 4px 2px #888888;
+		-webkit-box-shadow: 3px 4px 2px #888888;
+		box-shadow: 3px 4px 2px #888888;
+		color: #BCBCBC;
+		font-size: 16pt;
+		margin: 0 0 10px;
+		padding: 10px 20px;
+	}

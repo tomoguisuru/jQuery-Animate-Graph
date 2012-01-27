@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Animated Graph - Cars I have Owned Over the Years</title>		
+		<link rel="stylesheet" type="text/css" href="./css/style.css" media="all" />
+		<link rel="stylesheet" type="text/css" href="./css/graph.css" media="all" />
+		<link rel="stylesheet" type="text/css" href="./css/jcarousel_skin.css" media="all" />
+		
+		<script type="text/javascript"  src="http://www.google.com/jsapi"></script>
+		<script type="text/javascript">
+        <!--
+			google.load("jquery", "1.6.1");
+		//-->
+		</script>
+		
+		<script type="text/javascript" src="./scripts/jquery/jquery.jcarousel.min.js"></script>
+		<script type="text/javascript" src="./scripts/jquery/jquery.graph.js"></script>
+		<script type="text/javascript">
+		<!--
+			var jsonData = {
+				"axis": [ 
+					"1996 Toyota Paseo", 
+					"1987 Mazda RX-7 TII", 
+					"2001 Subaru 2.5RS", 
+					"2007 Toyota Yaris S", 
+					"2001 Toyota Siena LE", 
+					"2005 Subaru Legacy 2.5GT Lim" 
+				],
+				"path": "images/metrics/",
+				"metrics" : [
+					{ 
+						"title" : "0-60 MPH", 
+						"name" : "0-60", 
+						"img" : "0-60.jpg",
+						"def": "Time to reach 60 miles per hour on a straight strech of road", 
+						"scaleMsg": "Seconds (Fewer is Better)", 
+						"results": [9.4, 6.5, 7.7, 8.8, 9.3, 5.23] 
+					},
+					{ 
+						"title" : "Quarter Mile", 
+						"name" : "1/4 Mile", 
+						"img" : "quarter-mile.jpg",
+						"def": "Time to complete a quarter mile race", 
+						"scaleMsg": "Seconds (Fewer is Better)", 
+						"results": [16.8, 15.0, 15.7, 16.8, 16.8, 13.95] 
+					},
+					{ 
+						"title" : "Average Gas MPG (City)", 
+						"name" : "City MPG", 
+						"img" : "mpg-city.jpg",
+						"def": "Average MPG you can expect while driving in the city", 
+						"scaleMsg": "Miles (More is Better)", 
+						"results": [24, 15, 18, 29, 17, 17] 
+					},
+					{ 
+						"title" : "Average Gas MPG (Highway)", 
+						"name" : "Highway MPG", 
+						"img" : "mpg-highway.jpg",
+						"def": "Average MPG you can expect while driving on the highway", 
+						"scaleMsg": "Miles (More is Better)", 
+						"results": [31, 21, 26, 36, 23, 23] 
+					},
+					{ 
+						"title" : "Horsepower", 
+						"name" : "HP", 
+						"img" : "horsepower.jpg",
+						"def": "Engine Horsepower", 
+						"scaleMsg": "Horsepower (More is Better)", 
+						"results": [93, 202, 155, 106, 210, 250] 
+					}
+				]
+			}
+		//-->
+		</script>
+	</head>
+	<body>
+		<div id="wrapper">
+			<div class="widget">
+				<h2>Options</h2>
+				<p>
+					<ul>
+						<li><strong>columns</strong>: Number of viewable thumbnails</li>
+						<li><strong>imgHeight</strong>: jCarousel slider image height</li>
+						<li><strong>imgWidth</strong>: jCarousel slider image width</li>
+						<li><strong>jsonScript</strong>: JSON return file './scripts/json/json_results.js' anything that will return a JSON object can be used</li>
+						<li><strong>ajaxData</strong>: Data array to pass to the AJAX call</li>
+						<li><strong>jsonObject</strong>: JSON Object. Overrides jsonScript and ajaxData</li>
+						<li><strong>cssClass</strong>: jCarousel css skin to use</li>
+						<li><strong>imgEvent</strong>: 'click' or 'mouseenter'</li>
+						<li><strong>afterEvent</strong>: Function to perform after a click/mouseover event occurs</li>
+						<li><strong>animate</strong>: Turns off animation</li>
+						<li><strong>jCarouselEnabled</strong>: Use jCarousel</li>
+					</ul>
+				</p>
+			</div>
+			
+			<div class="widget">
+				<h2>Change Log</h2>
+				<ul>
+					<li>
+						<h3>Version 1.0</h3>
+						<ul>
+							<li>Initial Release</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		
+			<!-- Begin Animated -->
+			<div class="widget">
+				<h2>Animated - AJAX</h2>
+				<div id="cars" ></div>
+			</div>
+			
+			<script type="text/javascript">
+			<!--				
+				$("#cars").graph({ 
+					jsonScript: "scripts/json/json_graph.js"
+				});
+			//-->
+			</script>
+			
+			<div class="widget">
+				<h2>Animated - No AJAX</h2>
+				<div id="cars_no" ></div>
+			</div>
+			
+			<script type="text/javascript">
+			<!--				
+				$("#cars_no").graph({ 
+					jsonObject: jsonData
+				});
+			//-->
+			</script>
+			<!-- End Animated -->
+			
+			<!-- Begin No Animation -->
+			<div class="widget">
+				<h2>Not Animated - AJAX</h2>
+				<div id="cars2" ></div>
+			</div>
+			
+			<script type="text/javascript">
+			<!--		
+				$("#cars2").graph({ 
+					jsonScript: "scripts/json/json_graph.js",
+					animate: false
+				});
+			//-->
+			</script>
+			
+			<div class="widget">
+				<h2>Not Animated - No AJAX</h2>
+				<div id="cars2_no" ></div>
+			</div>
+			
+			<script type="text/javascript">
+			<!--		
+				$("#cars2_no").graph({ 
+					jsonObject: jsonData,
+					animate: false
+				});
+			//-->
+			</script>
+			<!-- Begin No Animation -->
+			
+			<!-- Begin Single Entry -->
+			<div class="widget">
+				<h2>Single Entry - AJAX</h2>
+				<div id="cars3" ></div>
+			</div>
+			
+			<script type="text/javascript">
+			<!--		
+				$("#cars3").graph({ 
+					jsonScript: "scripts/json/json_graph.js",
+					jCarouselEnabled: false
+				});
+			//-->
+			</script>
+			
+			<div class="widget">
+				<h2>Single Entry - No AJAX</h2>
+				<div id="cars3_no" ></div>
+			</div>
+			
+			<script type="text/javascript">
+			<!--		
+				$("#cars3_no").graph({ 
+					jsonObject: jsonData,
+					jCarouselEnabled: false
+				});
+			//-->
+			</script>
+			<!-- End Single Entry -->
+		</div>
+	</body>
+</html>
